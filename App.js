@@ -10,6 +10,7 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 
 import HomeScreen from "./src/screens/HomeScreen";
 import counselhome from "./src/screens/counselhome";
@@ -25,10 +26,14 @@ import eduvideo from "./src/screens/eduvideo";
 import scrap from "./src/screens/scrap";
 
 const navigator = createSwitchNavigator({
-   HomeFlow : createStackNavigator({
+    HomeFlow : createStackNavigator({
       Home: HomeScreen
     }),
+    //Home: HomeScreen,
     mainFlow: createBottomTabNavigator({
+      HomeFlow : createStackNavigator({
+        Home: HomeScreen
+      }),
       counselFlow: createStackNavigator({
         counselhome : counselhome,
         counselid : counselid,
