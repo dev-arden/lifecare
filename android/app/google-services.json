@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "28420413743",
+    "firebase_url": "https://lifecareproject-539d6.firebaseio.com",
+    "project_id": "lifecareproject-539d6",
+    "storage_bucket": "lifecareproject-539d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28420413743:android:b438ef7e5ba9ebc826a9da",
+        "android_client_info": {
+          "package_name": "com.lifecare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28420413743-em7i34shfvkskvj8tgistq602g1b1ac0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA01_Pcm3lOlZ5WvbxO-5y10ArNYvI8JkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28420413743-em7i34shfvkskvj8tgistq602g1b1ac0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "28420413743-441if2e54idvpf6cj537dit4r1g7ka85.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devfirebase.lifecare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

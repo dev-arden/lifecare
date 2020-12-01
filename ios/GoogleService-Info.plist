@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>28420413743-441if2e54idvpf6cj537dit4r1g7ka85.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.28420413743-441if2e54idvpf6cj537dit4r1g7ka85</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC0xBRz6UQf8z0qZSYbnx_JGB0RMgH5A7I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>28420413743</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.devfirebase.lifecare</string>
+	<key>PROJECT_ID</key>
+	<string>lifecareproject-539d6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lifecareproject-539d6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:28420413743:ios:9b9d2561d392c24a26a9da</string>
+	<key>DATABASE_URL</key>
+	<string>https://lifecareproject-539d6.firebaseio.com</string>
+</dict>
+</plist>
