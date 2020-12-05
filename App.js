@@ -11,6 +11,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 import HomeScreen from "./src/screens/HomeScreen";
 import counselhome from "./src/screens/counselhome";
@@ -24,6 +25,14 @@ import eduinfo from "./src/screens/eduinfo";
 import eduquiz from "./src/screens/eduquiz";
 import eduvideo from "./src/screens/eduvideo";
 import scrap from "./src/screens/scrap";
+import manual1 from "./src/screens/manual1";
+import manual2 from "./src/screens/manual2";
+import manual3 from "./src/screens/manual3";
+import manual4 from "./src/screens/manual4";
+import manual5 from "./src/screens/manual5";
+import manual6 from "./src/screens/manual6";
+import manual7 from "./src/screens/manual7";
+import manual8 from "./src/screens/manual8";
 
 
 /*
@@ -55,7 +64,15 @@ const counselFlow = createStackNavigator({
   counselinfo : counselinfo,
   counselnormal : counselnormal,
   counselready : counselready,
-  counseltype : counseltype
+  counseltype : counseltype,
+  manual1 : manual1,
+  manual2 : manual2,
+  manual3 : manual3,
+  manual4 : manual4,
+  manual5 : manual5,
+  manual6 : manual6,
+  manual7 : manual7,
+  manual8 : manual8
 });
 
 const eduFlow = createStackNavigator({
@@ -69,31 +86,32 @@ const scrapFlow = createStackNavigator({
   scrap : scrap
 });
 
-homeFlow.navigationOptions = {
-  tabBarLabel: 'home',
-  tabBarIcon: ({ tintColor }) => (
-    <Fontisto name="heart-alt" color={tintColor} size={25} />
-  ) 
-};
+// homeFlow.navigationOptions = {
+//   tabBarLabel: 'home',
+//   tabBarIcon: ({ tintColor }) => (
+//     <Fontisto name="heart-alt" color={tintColor} size={25} />
+//   ) 
+// };
 
 counselFlow.navigationOptions = {
-  tabBarLabel: 'counsel',
+  tabBarLabel: '상담매뉴얼',
   tabBarIcon: ({ tintColor }) => (
     <Fontisto name="heart-alt" color={tintColor} size={25} />
   )
 };
 
 eduFlow.navigationOptions = {
-  tabBarLabel: 'edu',
+  tabBarLabel: '교육매뉴얼',
   tabBarIcon: ({ tintColor }) => (
-    <Fontisto name="heart-alt" color={tintColor} size={25} />
+    <SimpleLineIcons name="book-open" color={tintColor} size={25} />
+    //<Fontisto name="heart-alt" color={tintColor} size={25} />
   )
 };
 
 scrapFlow.navigationOptions = {
-  tabBarLabel: 'scrap',
+  tabBarLabel: '즐겨찾기',
   tabBarIcon: ({ tintColor }) => (
-    <Fontisto name="heart-alt" color={tintColor} size={25} />
+    <Fontisto name="bookmark" color={tintColor} size={25} />
   )
 }
 
@@ -113,3 +131,5 @@ export default () => {
     <App />
   );
 };
+
+
