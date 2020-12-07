@@ -1,11 +1,10 @@
 import React from 'react';
-import {Text, View, StyleSheet, Button} from 'react-native';
+import {Text, View, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import Navlink from '../components/Navlink';
 
 const counselhome = ({navigation}) => {
   return (
     <View>
-      <Text>상담매뉴얼 메인페이지</Text>
       <Navlink 
         text="1.상담 전 준비는 하셨나요?"
         routeName="counselready"
