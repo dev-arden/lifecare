@@ -10,8 +10,11 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import {Provider} from './src/context/BlessedContext';
+
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Feather from 'react-native-vector-icons/Feather';
 
 import HomeScreen from "./src/screens/HomeScreen";
 import counselhome from "./src/screens/counselhome";
@@ -24,7 +27,7 @@ import eduhome from "./src/screens/eduhome";
 import eduinfo from "./src/screens/eduinfo";
 import eduquiz from "./src/screens/eduquiz";
 import eduvideo from "./src/screens/eduvideo";
-import scrap from "./src/screens/scrap";
+
 import manual1 from "./src/screens/manual1";
 import manual2 from "./src/screens/manual2";
 import manual3 from "./src/screens/manual3";
@@ -33,6 +36,17 @@ import manual5 from "./src/screens/manual5";
 import manual6 from "./src/screens/manual6";
 import manual7 from "./src/screens/manual7";
 import manual8 from "./src/screens/manual8";
+
+import blessed1 from "./src/screens/blessed1";
+import blessed2 from "./src/screens/blessed2";
+import blessed3 from "./src/screens/blessed3";
+import blessed4 from "./src/screens/blessed4";
+import blessed5 from "./src/screens/blessed5";
+import blessed6 from "./src/screens/blessed6";
+import blessed7 from "./src/screens/blessed7";
+import blessed8 from "./src/screens/blessed8";
+import blessed9 from "./src/screens/blessed9";
+import blessed10 from "./src/screens/blessed10";
 
 
 /*
@@ -82,8 +96,17 @@ const eduFlow = createStackNavigator({
   eduvideo : eduvideo
 });
 
-const scrapFlow = createStackNavigator({
-  scrap : scrap
+const blessedFlow = createStackNavigator({
+  blessed1 : blessed1,
+  blessed2 : blessed2,
+  blessed3 : blessed3,
+  blessed4 : blessed4,
+  blessed5 : blessed5,
+  blessed6 : blessed6,
+  blessed7 : blessed7,
+  blessed8 : blessed8,
+  blessed9 : blessed9,
+  blessed10 : blessed10
 });
 
 // homeFlow.navigationOptions = {
@@ -108,10 +131,10 @@ eduFlow.navigationOptions = {
   )
 };
 
-scrapFlow.navigationOptions = {
-  tabBarLabel: '즐겨찾기',
+blessedFlow.navigationOptions = {
+  tabBarLabel: '간이검사',
   tabBarIcon: ({ tintColor }) => (
-    <Fontisto name="bookmark" color={tintColor} size={25} />
+    <Feather name="check-square" color={tintColor} size={25} />
   )
 }
 
@@ -120,7 +143,7 @@ const navigator = createSwitchNavigator({
     mainFlow: createBottomTabNavigator({
       counselFlow,
       eduFlow,
-      scrapFlow
+      blessedFlow
   })
 }); 
 
@@ -128,7 +151,9 @@ const App = createAppContainer(navigator);
 
 export default () => {
   return (
-    <App />
+    <Provider>    
+      <App />
+    </Provider>
   );
 };
 

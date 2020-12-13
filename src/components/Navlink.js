@@ -26,10 +26,10 @@ const Navlink = ({navigation, text, routeName}) => {
           <Text style={styles.link}>
             {text}
           </Text>
-          <TouchableOpacity>
-            {/* onPress={() => {deleteBlogPost(item.id), console.log(item.id)}} */}
+          {/* <TouchableOpacity>
+            onPress={() => {deleteBlogPost(item.id), console.log(item.id)}}
             <AntDesign style={styles.icon} name="staro" />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       
     </TouchableOpacity>

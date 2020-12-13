@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import Navlink from '../components/Navlink';
 
+
 const counselhome = ({navigation}) => {
   return (
     <View>
