@@ -12,9 +12,10 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {Provider} from './src/context/BlessedContext';
 
-import Fontisto from 'react-native-vector-icons/Fontisto';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Feather from 'react-native-vector-icons/Feather';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from "./src/screens/HomeScreen";
 import counselhome from "./src/screens/counselhome";
@@ -70,65 +71,117 @@ export default createBottomTabNavigator({
 
 */
 
-const homeFlow = createStackNavigator({
-  Home: HomeScreen
-});
+const homeFlow = createStackNavigator(
+  {
+    Home: HomeScreen
+  }, 
+  {
+    defaultNavigationOptions: {
+      title: '홈',
+      // headerStyle: {
+      //   backgroundColor: "#4189D6"
+      // }
+      // headerStyle: {
+      //   backgroundColor: "orange"
+      // }
+    }
+  });
 
-const counselFlow = createStackNavigator({
-  counselhome: counselhome,
-  counselid : counselid,
-  counselinfo : counselinfo,
-  counselnormal : counselnormal,
-  counselready : counselready,
-  counseltype : counseltype,
-  manual1 : manual1,
-  manual2 : manual2,
-  manual3 : manual3,
-  manual4 : manual4,
-  manual5 : manual5,
-  manual6 : manual6,
-  manual7 : manual7,
-  manual8 : manual8
-});
+const counselFlow = createStackNavigator(
+  {
+    counselhome: counselhome,
+    counselid : counselid,
+    counselinfo : counselinfo,
+    counselnormal : counselnormal,
+    counselready : counselready,
+    counseltype : counseltype,
+    manual1 : manual1,
+    manual2 : manual2,
+    manual3 : manual3,
+    manual4 : manual4,
+    manual5 : manual5,
+    manual6 : manual6,
+    manual7 : manual7,
+    manual8 : manual8
+  },
+  {
+    defaultNavigationOptions: {
+      title: '상담매뉴얼'
+    }
+  });
 
-const eduFlow = createStackNavigator({
-  eduhome : eduhome,
-  eduinfo : eduinfo,
-  eduquiz : eduquiz,
-  eduvideo : eduvideo
-});
+const eduFlow = createStackNavigator(
+  {
+    eduhome : eduhome,
+    eduinfo : eduinfo,
+    eduquiz : eduquiz,
+    eduvideo : eduvideo
+  },
+  {
+    defaultNavigationOptions: {
+      title: '교육매뉴얼'
+    }
+  }
+);
 
-const blessedFlow = createStackNavigator({
-  blessedmain: blessedmain,
-  blessedmain2: blessedmain2,
-  blessed1 : blessed1,
-  blessed2 : blessed2,
-  blessed3 : blessed3,
-  blessed4 : blessed4,
-  blessed5 : blessed5,
-  blessed6 : blessed6,
-  blessed7 : blessed7,
-  blessed8 : blessed8,
-  blessed9 : blessed9,
-  blessed10 : blessed10
-});
+const blessedFlow = createStackNavigator(
+  {
+    blessedmain: blessedmain,
+    blessedmain2: blessedmain2,
+    blessed1 : blessed1,
+    blessed2 : blessed2,
+    blessed3 : blessed3,
+    blessed4 : blessed4,
+    blessed5 : blessed5,
+    blessed6 : blessed6,
+    blessed7 : blessed7,
+    blessed8 : blessed8,
+    blessed9 : blessed9,
+    blessed10 : blessed10
+  }, 
+  {
+    defaultNavigationOptions: {
+      title: '간이검사'
+    }
+  });
 
-// homeFlow.navigationOptions = {
-//   tabBarLabel: 'home',
-//   tabBarIcon: ({ tintColor }) => (
-//     <Fontisto name="heart-alt" color={tintColor} size={25} />
-//   ) 
-// };
+homeFlow.navigationOptions = {
+  tabBarLabel: '홈',
+  // tabBarOptions: {
+  //   labelStyle: {
+  //     fontSize: 15,
+  //     // margin: 0,
+  //     // padding: 0,
+  //   }
+  // },
+  tabBarIcon: ({ tintColor }) => (
+    <Ionicons name="home-outline" color={tintColor} size={25} />
+  ) 
+};
 
 counselFlow.navigationOptions = {
   tabBarLabel: '상담매뉴얼',
+  // tabBarOptions: {
+  //   labelStyle: {
+  //     fontSize: 15,
+  //     // margin: 0,
+  //     // padding: 0,
+  //   }
+  // },
   tabBarIcon: ({ tintColor }) => (
-    <Fontisto name="heart-alt" color={tintColor} size={25} />
+    <FontAwesome name="heart-o" color={tintColor} size={25} />
   )
 };
 
 eduFlow.navigationOptions = {
   tabBarLabel: '교육매뉴얼',
+  // tabBarOptions: {
+  //   labelStyle: {
+  //     fontSize: 15,
+  //     // margin: 0,
+  //     // padding: 0,
+  //   }
+  // },
   tabBarIcon: ({ tintColor }) => (
     <SimpleLineIcons name="book-open" color={tintColor} size={25} />
     //<Fontisto name="heart-alt" color={tintColor} size={25} />
@@ -137,19 +190,45 @@ eduFlow.navigationOptions = {
 
 blessedFlow.navigationOptions = {
   tabBarLabel: '간이검사',
+  // tabBarOptions: {
+  //   labelStyle: {
+  //     fontSize: 15,
+  //     // margin: 0,
+  //     // padding: 0,
+  //   }
+  // },
   tabBarIcon: ({ tintColor }) => (
     <Feather name="check-square" color={tintColor} size={25} />
   )
 }
 
-const navigator = createSwitchNavigator({
-    homeFlow, 
-    mainFlow: createBottomTabNavigator({
-      counselFlow,
-      eduFlow,
-      blessedFlow
-  })
-}); 
+// const navigator = createSwitchNavigator({ 
+//     mainFlow: createBottomTabNavigator({
+//       homeFlow,
+//       counselFlow,
+//       eduFlow,
+//       blessedFlow
+//   })
+// }); 
+
+const navigator = createBottomTabNavigator(
+  {
+    homeFlow,
+    counselFlow,
+    eduFlow,
+    blessedFlow
+  },
+  {
+    tabBarOptions: {
+      labelStyle: {
+        fontSize: 15,
+      },
+      // style:{
+      //   backgroundColor: "orange"
+      // }
+    }
+  }); 
+
 
 const App = createAppContainer(navigator);
 
