@@ -25,7 +25,7 @@ const blessed2 = ({navigation}) => {
           });
         }}
       />
-      {/* <FlatList 
+      <FlatList 
         data={state}
         keyExtractor={(answer) => answer.id}
         renderItem={({ item }) => {
@@ -41,7 +41,7 @@ const blessed2 = ({navigation}) => {
           </View>
           );
         }}
-      /> */}
+      />
       {/* <TextInput 
           onChangeText={text => setAnswer(text)}
           value={answer}

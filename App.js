@@ -37,6 +37,8 @@ import manual6 from "./src/screens/manual6";
 import manual7 from "./src/screens/manual7";
 import manual8 from "./src/screens/manual8";
 
+import blessedmain from "./src/screens/blessedmain";
+import blessedmain2 from "./src/screens/blessedmain2";
 import blessed1 from "./src/screens/blessed1";
 import blessed2 from "./src/screens/blessed2";
 import blessed3 from "./src/screens/blessed3";
@@ -97,6 +99,8 @@ const eduFlow = createStackNavigator({
 });
 
 const blessedFlow = createStackNavigator({
+  blessedmain: blessedmain,
+  blessedmain2: blessedmain2,
   blessed1 : blessed1,
   blessed2 : blessed2,
   blessed3 : blessed3,
