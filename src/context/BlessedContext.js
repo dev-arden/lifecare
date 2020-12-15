@@ -21,6 +21,18 @@ const blessedReducer = (state, action) => {
           volume : action.payload.volume
         }
       ];
+    case 'add_score':
+      return [
+        state, 
+        {  
+          id: (action.payload.id).toString(),
+          finalscore : action.payload.scoreone + action.payload.scoretwo + action.payload.scorethree + action.payload.scorefour,
+          scoreone : action.payload.scoreone,
+          scoretwo : action.payload.scoretwo,
+          scorethree : action.payload.scorethree,
+          scorefour : action.payload.scorefour 
+        }
+      ];
     default:
       return state;
   }
@@ -42,8 +54,15 @@ const showanswer = dispatch => {
   };
 };
 
+const addscore = dispatch => {
+  return (id, scoreone, scoretwo, scorethree, scorefour, finalscore) => {
+    dispatch({ type: 'add_score', payload: {id, scoreone, scoretwo, scorethree, scorefour, finalscore} });
+
+  };
+};
+
 export const { Context, Provider } = CreateDataContext(
   blessedReducer, 
-  {addanswer, showanswer},
+  {addanswer, showanswer,addscore},
   []
 );

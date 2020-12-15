@@ -1,115 +1,65 @@
 import React from 'react';
-import {Text, View, StyleSheet,TouchableOpacity} from 'react-native';
-import Navlink from '../components/Navlink';
-import counselready from './counselready';
-import {Button} from 'react-native-elements'
+import {Text, View, StyleSheet,TouchableOpacity, FlatList} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const counselhome = ({navigation}) => {
+  const type = [
+    {
+      id: '1',
+      title : '상담 전 준비',
+      nav : 'ready',
+      icon : <MaterialCommunityIcons name="numeric-1-box" size={25} color="orange"/>
+    },
+    {
+      id: '2',
+      title: '등록기관 및 상담자 소개',
+      nav : 'info',
+      icon : <MaterialCommunityIcons name="numeric-2-box" size={25} color="orange"/>
+    },
+    {
+      id: '3',
+      title: '대상자 신분증 확인',
+      nav : 'id',
+      icon : <MaterialCommunityIcons name="numeric-3-box" size={25} color="orange"/>
+    },
+    {
+      id: '4',
+      title: '맞춤 상담 알고리즘',
+      nav : 'algo',
+      icon : <MaterialCommunityIcons name="numeric-4-box" size={25} color="orange"/>
+    },
+    {
+      id: '5',
+      title: '대상자에 따른 상담매뉴얼 선택',
+      nav : 'type',
+      icon : <MaterialCommunityIcons name="numeric-5-box" size={25} color="orange"/>
+    }
+  ];
+
   return (
     <View style = {styles.viewstyle}>
-      {/* <Navlink 
-        text="1.상담 전 준비는 하셨나요?"
-        routeName="counselready"
-      />
-      <Navlink 
-        text="2.등록 기관 및 상담자 준비는 하셨나요?"
-        routeName="counselinfo"
-      />
-      <Navlink 
-        text="3.대상자 신분증은 확인하셨나요?"
-        routeName="counselid"
-      /> */}
-      
-        {/* <TouchableOpacity onPress={() => navigation.navigate(counselready)}>
-          <View style={styles.row}>
-              <Text style={styles.link}>1. 상담 전 준비는 하셨나요?</Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate(counselready)}>
-          <View style={styles.row}>
-              <Text style={styles.link}>
-                2.등록 기관 및 상담자 준비는 하셨나요?
-              </Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate(counselready)}>
-          <View style={styles.row}>
-              <Text style={styles.link}>
-                3.대상자 신분증은 확인하셨나요?
-              </Text>
-            </View>
-        </TouchableOpacity> */}
-
-
-
-        <TouchableOpacity onPress={() => navigation.navigate('counselready')}>
-          <View style={styles.liststyle}>
-              <View style={{alignSelf:"center"}}>
-                {/* <FontAwesome5 name="lightbulb" size={20} color="orange"/> */}
-                <MaterialCommunityIcons name="numeric-1-box" size={25} color="orange"/>
+      <View>
+        <FlatList 
+          keyExtractor = {(item)=> item.id}
+          data = {type}
+          renderItem={({item}) => 
+            <TouchableOpacity onPress={() => navigation.navigate('counsel'+`${item.nav}`)}>
+              <View style={styles.liststyle}>
+                  <View style={{alignSelf:"center"}}>
+                    {item.icon}
+                  </View>
+                  <Text style={{fontSize:18, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
+                    {item.title}
+                  </Text>
+                  <View style={{alignSelf:"center"}}>
+                    <AntDesign name="rightcircleo" size={20} color="grey"/>
+                  </View>
               </View>
-              <Text style={{fontSize:18, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
-                상담 전 준비는 하셨나요?
-              </Text>
-              <View style={{alignSelf:"center"}}>
-                <AntDesign name="rightcircleo" size={20} color="grey"/>
-              </View>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('counselready')}>
-          <View style={styles.liststyle}>
-              <View style={{alignSelf:"center"}}>
-                {/* <FontAwesome5 name="lightbulb" size={20} color="orange"/> */}
-                <MaterialCommunityIcons name="numeric-2-box" size={25} color="orange"/>
-              </View>
-              <Text style={{fontSize:18, color:'black', paddingHorizontal: 10, flex:1, alignSelf:'center'}}>
-                등록 기관 및 상담자 준비는 하셨나요?
-              </Text>
-              <View style={{alignSelf:"center"}}>
-                <AntDesign name="rightcircleo" size={20} color="grey"/>
-              </View>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('counselready')}>
-          <View style={styles.liststyle}>
-               <View style={{alignSelf:"center"}}>
-                {/* <FontAwesome5 name="lightbulb" size={20} color="orange"/> */}
-                <MaterialCommunityIcons name="numeric-3-box" size={25} color="orange"/>
-              </View>
-              <Text style={{fontSize:18, color:'black', paddingHorizontal: 10, flex:1, alignSelf:'center'}}>
-                대상자 신분증은 확인하셨나요?
-              </Text>
-              <View style={{alignSelf:"center"}}>
-                <AntDesign name="rightcircleo" size={20} color="grey"/>
-              </View>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('counselready')}>
-          <View style={styles.liststyle}> 
-              <View style={{alignSelf:"center"}}>
-                {/* <FontAwesome5 name="lightbulb" size={20} color="orange"/> */}
-                <MaterialCommunityIcons name="numeric-4-box" size={25} color="orange"/>
-              </View>
-              <Text style={{fontSize:18, color:'black', paddingHorizontal: 10, flex:1, alignSelf:'center'}}>
-                대상자에 따른 상담매뉴얼 선택
-              </Text>
-              <View style={{alignSelf:"center"}}>
-                <AntDesign name="rightcircleo" size={20} color="grey"/>
-              </View>
-            </View>
-        </TouchableOpacity>
-      
-      {/* <Button
-        title="대상자에 따른 상담매뉴얼 선택"
-        onPress={()=>navigation.navigate('counseltype')}
-        type="outline"
-        titleStyle={styles.btstyle}
-        buttonStyle={{borderWidth : 1,  marginVertical: 30}}
-      />
-       */}
+            </TouchableOpacity>
+          }
+        />
+      </View>
     </View>
   );
 };
@@ -123,17 +73,6 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontSize : 20,
     //fontWeight : 'bold'
-  },
-  row: {
-    flexDirection: 'row',
-    paddingVertical: 30,
-    paddingHorizontal: 10,
-    // borderTopWidth:1,
-    // borderBottomWidth:1,
-    //borderWidth : 1,
-    //marginHorizontal : 10,
-    borderColor: 'gray',
-    marginVertical: 30
   },
   icon: {
     fontSize:25

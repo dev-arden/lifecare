@@ -23,7 +23,10 @@ import counselid from "./src/screens/counselid";
 import counselinfo from "./src/screens/counselinfo";
 import counselnormal from "./src/screens/counselnormal";
 import counselready from "./src/screens/counselready";
-import counseltype from "./src/screens/counseltype";
+import counseltype from "./src/screens/counseltype"; 
+import counselalgo from "./src/screens/counselalgo";
+import counselalgoyes from "./src/screens/counselalgoyes";
+import counselalgono from "./src/screens/counselalgono";
 import eduhome from "./src/screens/eduhome";
 import eduinfo from "./src/screens/eduinfo";
 import eduquiz from "./src/screens/eduquiz";
@@ -95,6 +98,9 @@ const counselFlow = createStackNavigator(
     counselnormal : counselnormal,
     counselready : counselready,
     counseltype : counseltype,
+    counselalgo : counselalgo,
+    counselalgoyes : counselalgoyes,
+    counselalgono : counselalgono,
     manual1 : manual1,
     manual2 : manual2,
     manual3 : manual3,
