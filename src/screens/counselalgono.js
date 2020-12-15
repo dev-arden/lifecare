@@ -1,67 +1,95 @@
 import React,{useState, useContext} from 'react';
 import {Text,StyleSheet, View, LogBox,FlatList} from 'react-native';
 import {Button} from 'react-native-elements';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import NumericInput from 'react-native-numeric-input';
-import {Context} from '../context/BlessedContext';
+import { ScrollView } from 'react-native-gesture-handler';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-LogBox.ignoreAllLogs(true);
 
-const counselalgono = () => {
-  const[scoreone, setScoreone] = useState(0);
-  const[scoretwo, setScoretwo] = useState(0);
-  const[scorethree, setScorethree] = useState(0);
-  const[scorefour, setScorefour] = useState(0);
-  const {state, addscore} = useContext(Context);
-  const[finalscore, setFinalscore] = useState(0);
-  const id = 1;
-
+const counselalgono = ({navigation}) => {
+  /**
+   * 다음은 간편하게 OOO님의 판단력을 알아보겠습니다. 다음의 질문에 대답해주세요.
+   * 
+   * 
+   */
   return (
-    <View>
-      <Text>간이 검사 진행을 통해 표준, 인지 상담 분리</Text>
-      <Text>문제 1</Text>
-        <NumericInput 
-            value={scoreone}
-            onChange={value => setScoreone(value)}  
-        />
-      
-      <Text>문제 2</Text>
-      <NumericInput 
-          value={scoretwo}
-          onChange={value => setScoretwo(value)}  
-      />
-      <Text>문제 3</Text>
-      <NumericInput 
-          value={scorethree}
-          onChange={value => setScorethree(value)}  
-      />
-      <Text>문제 4</Text>
-      <NumericInput 
-          value={scorefour}
-          onChange={value => setScorefour(value)}  
-      />
-      <Button
-        title="점수확인"
-        onPress = {() => addscore(id, scoreone, scoretwo, scorethree, scorefour, finalscore)}
-      />
-      <FlatList 
-        data={state}
-        keyExtractor={(answer) => answer.id}
-        renderItem={({ item }) => {
-          //item === our individual blogpost objects
-          return ( 
-            <View>
-            <Text>
-              {item.finalscore}
-            </Text>
-          </View>
-          );
-        }}
-      />
+    <ScrollView>
+    <View style={styles.viewstyle}>
+      <View style = {styles.textview}>
+        <Text style = {styles.text}>다음은 간편하게</Text>
+        <Text style = {styles.text}>OOO님의 판단력을</Text>
+        <Text style = {styles.text}>알아보겠습니다.</Text>
+        <Text style = {styles.text}>다음의 질문에 대답해주세요.</Text>
+      </View>
+      <View style={styles.btboxview}>
+        <View style={{marginBottom : 5}}>
+          <Text style={styles.bttext}>
+            검사하시겠습니까?
+          </Text>
+        </View>
+        <View style={{alignContent:'center'}}>
+          <Button 
+            icon={
+              <AntDesign
+                name="right"
+                size={15}
+                color="#4189D6"
+              />
+            }
+            iconRight
+            type="outline"
+            titleStyle = {{fontSize : 23, fontWeight : 'bold'}}
+            buttonStyle = {{alignSelf : 'center', borderWidth :2}}
+            title = "검사하기"
+            onPress = {() => navigation.navigate('counselalgono1')}
+          />
+        </View>
+      </View>
     </View>
+  </ScrollView>
   )
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  viewstyle:{
+    justifyContent : 'center',
+    flex : 1
+  },
+  textview:{
+    backgroundColor : '#FDF6E3',
+    justifyContent : 'space-around',
+    padding : 15,
+    margin : 15,
+    height : 450,
+    borderRadius : 20
+    // borderWidth:2,
+    // borderColor: 'black' 
+  }, 
+  text:{
+    fontSize : 23
+  },
+  bttext : {
+    fontSize : 23,
+    alignSelf : 'center',
+    // borderWidth:2,
+    // borderColor: 'black'
+  },
+  btboxview:{
+    backgroundColor : 'white',
+    justifyContent : 'space-around',
+    padding : 15,
+    height : 150,
+    margin : 15,
+    borderRadius : 20,
+    // borderWidth:2,
+    // borderColor: 'black'
+  },
+  btview:{
+    flexDirection : 'row',
+    marginHorizontal : 15,
+    justifyContent : 'space-around',
+    // borderWidth:2,
+    // borderColor: 'black'
+  },
+});
 
 export default counselalgono;

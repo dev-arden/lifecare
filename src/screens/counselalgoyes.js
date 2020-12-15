@@ -33,12 +33,12 @@ const counselalgoyes = ({navigation}) => {
     {
       id: '5',
       title: '비문해 상담매뉴얼',
-      icon : <Ionicons name="earth" size={30} />
+      icon : <Ionicons name="language" size={30} />
     },
     {
       id: '6',
       title: '외국인 상담매뉴얼',
-      icon : <Ionicons name="language" size={30} />
+      icon : <Ionicons name="earth" size={30} />
     }
   ];
 

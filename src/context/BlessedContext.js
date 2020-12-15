@@ -1,3 +1,4 @@
+import { call } from 'react-native-reanimated';
 import CreateDataContext from './CreateDataContext';
 
 
@@ -21,16 +22,18 @@ const blessedReducer = (state, action) => {
           volume : action.payload.volume
         }
       ];
-    case 'add_score':
+    case 'add_count':
       return [
         state, 
         {  
-          id: (action.payload.id).toString(),
-          finalscore : action.payload.scoreone + action.payload.scoretwo + action.payload.scorethree + action.payload.scorefour,
-          scoreone : action.payload.scoreone,
-          scoretwo : action.payload.scoretwo,
-          scorethree : action.payload.scorethree,
-          scorefour : action.payload.scorefour 
+          count : action.payload.count
+        }
+      ];
+    case 'add_sum':
+      return [
+        ...state, 
+        {  
+          sum : action.payload.sum
         }
       ];
     default:
@@ -54,15 +57,26 @@ const showanswer = dispatch => {
   };
 };
 
-const addscore = dispatch => {
-  return (id, scoreone, scoretwo, scorethree, scorefour, finalscore) => {
-    dispatch({ type: 'add_score', payload: {id, scoreone, scoretwo, scorethree, scorefour, finalscore} });
+const addcount = dispatch => {
+  return (count) => {
+    dispatch({ type: 'add_count', payload: {count} });
+    if(callback){
+      callback();
+    }
+  };
+};
 
+const addsum = dispatch => {
+  return (sum) => {
+    dispatch({ type: 'add_score', payload: {sum} });
+    if(callback){
+      callback();
+    }
   };
 };
 
 export const { Context, Provider } = CreateDataContext(
   blessedReducer, 
-  {addanswer, showanswer,addscore},
+  {addanswer, showanswer,addcount, addsum},
   []
 );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, FlatList, Image} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -7,69 +7,41 @@ import { ScrollView } from 'react-native-gesture-handler';
 import titlebar from '../components/titlebar';
 import {Button} from 'react-native-elements'
 
-/**
- * 
- *  저는 보건복지부 지정을 받은 사전연명의료의향서 등록기관인 [기관명] 소속 상담사이며, 의향서 작성을 돕고 있습니다. 
-   [상담자 신분증과 등록기관 지정서 제시
- */
-
-const counselid = ({navigation}) => {
+const counselready3 = ({navigation}) => {
   return (
     <ScrollView>
       <View style = {styles.viewstyle}>
         <View style = {styles.btboxview}>
-            <Text style={styles.titlestyle} >
-              대상자 확인
-            </Text>
-        </View>
-        <View style={styles.newliststyle}>
-          <Image 
-            source = {require('../../assets/info_name.png')} 
-            style ={{height : 150, width : 150}}
-          />
-          <Image 
-            source = {require('../../assets/info_hospital.png')} 
-            style ={{height : 150, width : 150}}
-          />
+          <Text style={styles.titlestyle} >
+            4 - 상담 전 다짐
+          </Text>
         </View>
         <View style={styles.liststyle}>
           <View style={{alignSelf:"center"}}>
-            {/* {item.icon} */}
             <AntDesign name="check" size={25} color="blue"/>
           </View>
           <View style={{flexDirection : 'column'}}>
             <Text style={styles.textstyle}>
-              안녕하세요 
+              나는 내담자가 
             </Text>
             <Text style={styles.textstyle}>
-              방문해주셔서 감사합니다. 
+              사전연명의료의향서를 
             </Text>
             <Text style={styles.textstyle}>
-              저는 상담자 OOO입니다.
+              충분히 이해하고 자발적으로
             </Text>
             <Text style={styles.textstyle}>
-              저는 보건복지부 지정을 받은
+              의사결정할 수 있도록 
             </Text>
             <Text style={styles.textstyle}>
-              사전연명의료의향서 등록기관인
+              내담자의 특성을 반영한 
             </Text>
             <Text style={styles.textstyle}>
-              [기관명] 소속 상담사이며,
-            </Text>
-            <Text style={styles.textstyle}>
-              의향서 작성을 돕고 있습니다.
+              맞춤형 상담을 제공할 것이다.
             </Text>
           </View>
         </View>
-        <View style={styles.liststyle}>
-          <View style={{alignSelf:"center"}}>
-            {/* {item.icon} */}
-            <AntDesign name="check" size={25} color="blue"/>
-          </View>
-          <Text style={{fontSize:20, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
-            상담자 신분증과 등록기관 지정서 제시
-          </Text>
-        </View>
+
         <View>
           <Button 
             icon={
@@ -83,7 +55,7 @@ const counselid = ({navigation}) => {
             type="outline"
             titleStyle = {{fontSize : 23, fontWeight : 'bold'}}
             buttonStyle = {style=styles.buttonstyle}
-            title = "완료"
+            title = "준비 완료"
             onPress = {() => navigation.navigate('counselhome')}
           />
         </View>
@@ -101,6 +73,15 @@ const styles = StyleSheet.create({
     // borderColor : 'black',
     alignSelf : 'center'
   },
+  backgroundStyle:{
+    marginTop: 10,
+    backgroundColor: '#F0EEEE',
+    height:50,
+    borderRadius:5,
+    marginHorizontal: 15,
+    flexDirection: 'row',
+    marginBottom: 10
+  },
   btboxview:{
     flexDirection : 'row',
     backgroundColor : '#FDF6E3',
@@ -112,9 +93,29 @@ const styles = StyleSheet.create({
     // borderWidth:2,
     // borderColor: 'black'
   },
+  titleview:{
+    backgroundColor : 'white',
+    justifyContent : 'space-around',
+    padding : 15,
+    margin : 15,
+    height : 80,
+    borderRadius : 20
+  },
   viewstyle:{
     flex:1,
     justifyContent : 'center'
+  },
+  link:{
+    color: 'blue',
+    fontSize : 20,
+    //fontWeight : 'bold'
+  },
+  icon: {
+    fontSize:25
+  },
+  btstyle:{
+    fontSize:20
+    //fontWeight: 'bold'
   },
   liststyle: {
     marginHorizontal : 20,
@@ -128,18 +129,12 @@ const styles = StyleSheet.create({
     paddingHorizontal : 20,
     flexDirection : 'row'
   },
-  newliststyle: {
+  buttonstyle : {
+    alignSelf: 'stretch',
     marginHorizontal : 20,
-    marginVertical : 15,
-    fontSize : 20,
-    borderWidth : 1,
-    borderColor : 'white',
-    color : 'white',
-    backgroundColor : 'white',
-    paddingVertical: 30,
-    paddingHorizontal : 20,
-    flexDirection : 'row',
-    justifyContent:'space-around'
+    marginBottom : 15,
+    borderWidth : 2,
+    // borderColor : 'black'
   },
   textstyle:{
     fontSize:20,
@@ -148,14 +143,7 @@ const styles = StyleSheet.create({
     flex:1,
     margin : 10
     //alignSelf: 'center'
-  },
-  buttonstyle : {
-    alignSelf: 'stretch',
-    marginHorizontal : 20,
-    marginBottom : 15,
-    borderWidth : 2,
-    // borderColor : 'black'
   }
 });
 
-export default counselid;
+export default counselready3;

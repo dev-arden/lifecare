@@ -2,12 +2,12 @@ import React from 'react';
 import {Text, View, StyleSheet, Platform, KeyboardAvoidingView, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import {Button} from 'react-native-elements';
 
 const HomeScreen = ({navigation}) => {
   return (
-      <SafeAreaView style={{flex:1}}>
+      <SafeAreaView style={{flex : 1}}>        
         <View style={styles.viewstyle}>
           <View>
             <Text style={styles.textstyle}>사전연명의료의향서</Text>
@@ -32,7 +32,7 @@ const HomeScreen = ({navigation}) => {
             />
           </View>
         </View>
-      </SafeAreaView>
+        </SafeAreaView>
   );
 };
 

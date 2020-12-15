@@ -23,10 +23,18 @@ import counselid from "./src/screens/counselid";
 import counselinfo from "./src/screens/counselinfo";
 import counselnormal from "./src/screens/counselnormal";
 import counselready from "./src/screens/counselready";
+import counselready2 from "./src/screens/counselready2";
+import counselready3 from "./src/screens/counselready3";
+
 import counseltype from "./src/screens/counseltype"; 
 import counselalgo from "./src/screens/counselalgo";
 import counselalgoyes from "./src/screens/counselalgoyes";
 import counselalgono from "./src/screens/counselalgono";
+import counselalgono1 from "./src/screens/counselalgono1";
+import counselalgono2 from "./src/screens/counselalgono2";
+import counselalgono3 from "./src/screens/counselalgono3";
+import counselalgono4 from "./src/screens/counselalgono4";
+import counselalgono5 from "./src/screens/counselalgono5";
 import eduhome from "./src/screens/eduhome";
 import eduinfo from "./src/screens/eduinfo";
 import eduquiz from "./src/screens/eduquiz";
@@ -97,10 +105,17 @@ const counselFlow = createStackNavigator(
     counselinfo : counselinfo,
     counselnormal : counselnormal,
     counselready : counselready,
+    counselready2 : counselready2,
+    counselready3 : counselready3,
     counseltype : counseltype,
     counselalgo : counselalgo,
     counselalgoyes : counselalgoyes,
     counselalgono : counselalgono,
+    counselalgono1 : counselalgono1,
+    counselalgono2 : counselalgono2,
+    counselalgono3 : counselalgono3,
+    counselalgono4 : counselalgono4,
+    counselalgono5 : counselalgono5,
     manual1 : manual1,
     manual2 : manual2,
     manual3 : manual3,
