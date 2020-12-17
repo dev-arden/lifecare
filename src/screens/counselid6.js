@@ -13,20 +13,14 @@ import {Button} from 'react-native-elements'
    [상담자 신분증과 등록기관 지정서 제시
  */
 
-const counselinfo = ({navigation}) => {
+const counselid6 = ({navigation}) => {
   return (
     <ScrollView>
       <View style = {styles.viewstyle}>
         <View style = {styles.btboxview}>
             <Text style={styles.titlestyle} >
-              상담자 소개
+              [간편인지검사 항목]
             </Text>
-        </View>
-        <View style={styles.newliststyle}>
-          <Image 
-            source = {require('../../assets/info.png')} 
-            style ={{height : 250, width : 320, resizeMode:'contain'}}
-          />
         </View>
         <View style={styles.liststyle}>
           <View style={{alignSelf:"center"}}>
@@ -34,27 +28,12 @@ const counselinfo = ({navigation}) => {
             <AntDesign name="check" size={25} color="blue"/>
           </View>
           <View style={{flexDirection : 'column'}}>
-            <Text style={styles.textstyle}>
-              안녕하세요 
-            </Text>
-            <Text style={styles.textstyle}>
-              방문해주셔서 감사합니다. 
-            </Text>
-            <Text style={styles.textstyle}>
-              저는 상담자 OOO입니다.
-            </Text>
-            <Text style={styles.textstyle}>
-              저는 보건복지부 지정을 받은
-            </Text>
-            <Text style={styles.textstyle}>
-              사전연명의료의향서 등록기관인
-            </Text>
-            <Text style={styles.textstyle}>
-              [기관명] 소속 상담사이며,
-            </Text>
-            <Text style={styles.textstyle}>
-              의향서 작성을 돕고 있습니다.
-            </Text>
+              <Text style={styles.textstyle}>
+                1. 올해가 몇 년도 인가요?
+              </Text>
+              <Text style={styles.textstyle}>
+                (정답 1점)
+              </Text>
           </View>
         </View>
         <View style={styles.liststyle}>
@@ -62,9 +41,79 @@ const counselinfo = ({navigation}) => {
             {/* {item.icon} */}
             <AntDesign name="check" size={25} color="blue"/>
           </View>
-          <Text style={{fontSize:20, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
-            상담자 신분증과 등록기관 지정서 제시
-          </Text>
+          <View style={{flexDirection : 'column'}}>
+              <Text style={styles.textstyle}>
+                2. 오늘이 몇 일인가요?
+              </Text>
+              <Text style={styles.textstyle}>
+                (정답 1점)
+              </Text>
+          </View>
+        </View>
+        <View style={styles.liststyle}>
+          <View style={{alignSelf:"center"}}>
+            {/* {item.icon} */}
+            <AntDesign name="check" size={25} color="blue"/>
+          </View>
+          <View style={{flexDirection : 'column'}}>
+              <Text style={styles.textstyle}>
+                3. 오늘이 무슨 요일인가요?
+              </Text>
+              <Text style={styles.textstyle}>
+                (정답 1점)
+              </Text>
+          </View>
+        </View>
+        <View style={styles.liststyle}>
+          <View style={{alignSelf:"center"}}>
+            {/* {item.icon} */}
+            <AntDesign name="check" size={25} color="blue"/>
+          </View>
+          <View style={{flexDirection : 'column'}}>
+              <Text style={styles.textstyle}>
+                4. 대한민국을 거꾸로 말씀해 보세요.
+              </Text>
+              <Text style={styles.textstyle}>
+                (정답 1점)
+              </Text>
+          </View>
+        </View>
+        <View style={styles.liststyle}>
+          <View style={{alignSelf:"center"}}>
+            {/* {item.icon} */}
+            <AntDesign name="exclamationcircleo" size={25} color="black"/>
+          </View>
+          <View style={{flexDirection : 'column'}}>
+              <Text style={styles.textstyle}>
+                한국형 간편인지검사(KO3DY):
+              </Text>
+              <Text style={styles.textstyle}>
+                4점 = 정상
+              </Text>
+              <Text style={styles.textstyle}>
+                3점 = 경도인지저하(mild)
+              </Text>
+              <Text style={styles.textstyle}>
+                2점 = 중등도인지저하(moderate)
+              </Text>
+              <Text style={styles.textstyle}>
+                1점 이하 = 중증도인지저하(severe)
+              </Text>
+          </View>
+        </View>
+        <View style={styles.liststyle}>
+          <View style={{alignSelf:"center"}}>
+            {/* {item.icon} */}
+            <AntDesign name="exclamationcircleo" size={25} color="black"/>
+          </View>
+          <View style={{flexDirection : 'column'}}>
+              <Text style={styles.textstyle}>
+                4점과 3점은 표준상담진행,
+              </Text>
+              <Text style={styles.textstyle}>
+                2점 이하는 인지맞춤상담진행
+              </Text>
+          </View>
         </View>
         <View>
           <Button 
@@ -80,7 +129,7 @@ const counselinfo = ({navigation}) => {
             titleStyle = {{fontSize : 23, fontWeight : 'bold'}}
             buttonStyle = {style=styles.buttonstyle}
             title = "다음"
-            onPress = {() => navigation.navigate('counselinfo2')}
+            onPress = {() => navigation.navigate('counselid7')}
           />
         </View>
       </View>
@@ -132,8 +181,8 @@ const styles = StyleSheet.create({
     borderColor : 'white',
     color : 'white',
     backgroundColor : 'white',
-    paddingVertical: 30,
-    paddingHorizontal : 20,
+    paddingVertical: 10,
+    paddingHorizontal : 10,
     flexDirection : 'row',
     justifyContent:'space-around'
   },
@@ -154,4 +203,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default counselinfo;
+export default counselid6;

@@ -13,19 +13,19 @@ import {Button} from 'react-native-elements'
    [상담자 신분증과 등록기관 지정서 제시
  */
 
-const counselinfo = ({navigation}) => {
+const counselmean = ({navigation}) => {
   return (
     <ScrollView>
       <View style = {styles.viewstyle}>
         <View style = {styles.btboxview}>
             <Text style={styles.titlestyle} >
-              상담자 소개
+              [작성의미]
             </Text>
         </View>
         <View style={styles.newliststyle}>
           <Image 
-            source = {require('../../assets/info.png')} 
-            style ={{height : 250, width : 320, resizeMode:'contain'}}
+            source = {require('../../assets/wonder.png')} 
+            style ={{height : 330, width : 330, resizeMode:'contain'}}
           />
         </View>
         <View style={styles.liststyle}>
@@ -34,38 +34,18 @@ const counselinfo = ({navigation}) => {
             <AntDesign name="check" size={25} color="blue"/>
           </View>
           <View style={{flexDirection : 'column'}}>
-            <Text style={styles.textstyle}>
-              안녕하세요 
-            </Text>
-            <Text style={styles.textstyle}>
-              방문해주셔서 감사합니다. 
-            </Text>
-            <Text style={styles.textstyle}>
-              저는 상담자 OOO입니다.
-            </Text>
-            <Text style={styles.textstyle}>
-              저는 보건복지부 지정을 받은
-            </Text>
-            <Text style={styles.textstyle}>
-              사전연명의료의향서 등록기관인
-            </Text>
-            <Text style={styles.textstyle}>
-              [기관명] 소속 상담사이며,
-            </Text>
-            <Text style={styles.textstyle}>
-              의향서 작성을 돕고 있습니다.
-            </Text>
+              <Text style={styles.textstyle}>
+                사전연명의료의향서를
+              </Text>
+              <Text style={styles.textstyle}>
+                왜 작성하려고 하시나요?
+              </Text>
+              <Text style={styles.textstyle}>
+                어떻게 아시게 되셨나요?
+              </Text>
           </View>
         </View>
-        <View style={styles.liststyle}>
-          <View style={{alignSelf:"center"}}>
-            {/* {item.icon} */}
-            <AntDesign name="check" size={25} color="blue"/>
-          </View>
-          <Text style={{fontSize:20, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
-            상담자 신분증과 등록기관 지정서 제시
-          </Text>
-        </View>
+  
         <View>
           <Button 
             icon={
@@ -80,7 +60,7 @@ const counselinfo = ({navigation}) => {
             titleStyle = {{fontSize : 23, fontWeight : 'bold'}}
             buttonStyle = {style=styles.buttonstyle}
             title = "다음"
-            onPress = {() => navigation.navigate('counselinfo2')}
+            onPress = {() => navigation.navigate('counselmean2')}
           />
         </View>
       </View>
@@ -132,8 +112,8 @@ const styles = StyleSheet.create({
     borderColor : 'white',
     color : 'white',
     backgroundColor : 'white',
-    paddingVertical: 30,
-    paddingHorizontal : 20,
+    paddingVertical: 10,
+    paddingHorizontal : 10,
     flexDirection : 'row',
     justifyContent:'space-around'
   },
@@ -154,4 +134,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default counselinfo;
+export default counselmean;

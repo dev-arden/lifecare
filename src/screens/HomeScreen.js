@@ -23,7 +23,7 @@ const HomeScreen = ({navigation}) => {
                 />
               }
               iconRight
-              onPress={() => navigation.navigate('counselhome')}
+              onPress={() => navigation.navigate('counseltype')}
               //raised
               title="시작하기"
               type="outline"

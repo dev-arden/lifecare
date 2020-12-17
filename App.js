@@ -20,7 +20,28 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from "./src/screens/HomeScreen";
 import counselhome from "./src/screens/counselhome";
 import counselid from "./src/screens/counselid";
+import counselid2 from "./src/screens/counselid2";
+import counselid3 from "./src/screens/counselid3";
+import counselid4 from "./src/screens/counselid4";
+import counselid5 from "./src/screens/counselid5";
+import counselid6 from "./src/screens/counselid6";
+import counselid7 from "./src/screens/counselid7";
+import counselid8 from "./src/screens/counselid8";
+import counselid9 from "./src/screens/counselid9";
+import counselid10 from "./src/screens/counselid10";
 import counselinfo from "./src/screens/counselinfo";
+import counselinfo2 from "./src/screens/counselinfo2";
+import counselmean from "./src/screens/counselmean";
+import counselmean2 from "./src/screens/counselmean2";
+import counselmean3 from "./src/screens/counselmean3";
+import counselmean4 from "./src/screens/counselmean4";
+
+import counselfinish from "./src/screens/counselfinish";
+import counselenter from "./src/screens/counselenter";
+import counselwrite from "./src/screens/counselwrite";
+import counseltalk from "./src/screens/counseltalk";
+
+
 import counselnormal from "./src/screens/counselnormal";
 import counselready from "./src/screens/counselready";
 import counselready2 from "./src/screens/counselready2";
@@ -100,14 +121,32 @@ const homeFlow = createStackNavigator(
 
 const counselFlow = createStackNavigator(
   {
+    counseltype : counseltype,
     counselhome: counselhome,
     counselid : counselid,
+    counselid2 : counselid2,
+    counselid3 : counselid3,
+    counselid4 : counselid4,
+    counselid5 : counselid5,
+    counselid6 : counselid6,
+    counselid7 : counselid7,
+    counselid8 : counselid8,
+    counselid9 : counselid9,
+    counselid10 : counselid10,
+    counselmean : counselmean,
+    counselmean2 : counselmean2,
+    counselmean3 : counselmean3,
+    counselfinish : counselfinish,
+    counselenter : counselenter,
+    counselwrite : counselwrite,
+    counseltalk : counseltalk,
+
     counselinfo : counselinfo,
+    counselinfo2 : counselinfo2,
     counselnormal : counselnormal,
     counselready : counselready,
     counselready2 : counselready2,
     counselready3 : counselready3,
-    counseltype : counseltype,
     counselalgo : counselalgo,
     counselalgoyes : counselalgoyes,
     counselalgono : counselalgono,
@@ -125,11 +164,12 @@ const counselFlow = createStackNavigator(
     manual7 : manual7,
     manual8 : manual8
   },
-  {
-    defaultNavigationOptions: {
-      title: '상담매뉴얼'
-    }
-  });
+  // {
+  //   defaultNavigationOptions: {
+  //     title: '상담매뉴얼'
+  //   }
+  // }
+  );
 
 const eduFlow = createStackNavigator(
   {
@@ -138,11 +178,11 @@ const eduFlow = createStackNavigator(
     eduquiz : eduquiz,
     eduvideo : eduvideo
   },
-  {
-    defaultNavigationOptions: {
-      title: '교육매뉴얼'
-    }
-  }
+  // {
+  //   defaultNavigationOptions: {
+  //     title: '교육매뉴얼'
+  //   }
+  // }
 );
 
 const blessedFlow = createStackNavigator(
@@ -160,11 +200,12 @@ const blessedFlow = createStackNavigator(
     blessed9 : blessed9,
     blessed10 : blessed10
   }, 
-  {
-    defaultNavigationOptions: {
-      title: '간이검사'
-    }
-  });
+  // {
+  //   defaultNavigationOptions: {
+  //     title: '간이검사'
+  //   }
+  // }
+  );
 
 homeFlow.navigationOptions = {
   tabBarLabel: '홈',

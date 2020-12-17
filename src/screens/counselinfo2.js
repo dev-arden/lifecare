@@ -13,7 +13,7 @@ import {Button} from 'react-native-elements'
    [상담자 신분증과 등록기관 지정서 제시
  */
 
-const counselinfo = ({navigation}) => {
+const counselinfo2 = ({navigation}) => {
   return (
     <ScrollView>
       <View style = {styles.viewstyle}>
@@ -22,49 +22,39 @@ const counselinfo = ({navigation}) => {
               상담자 소개
             </Text>
         </View>
-        <View style={styles.newliststyle}>
-          <Image 
-            source = {require('../../assets/info.png')} 
-            style ={{height : 250, width : 320, resizeMode:'contain'}}
-          />
-        </View>
         <View style={styles.liststyle}>
           <View style={{alignSelf:"center"}}>
             {/* {item.icon} */}
-            <AntDesign name="check" size={25} color="blue"/>
+            <AntDesign name="exclamationcircleo" size={25} color="black"/>
           </View>
           <View style={{flexDirection : 'column'}}>
             <Text style={styles.textstyle}>
-              안녕하세요 
-            </Text>
-            <Text style={styles.textstyle}>
-              방문해주셔서 감사합니다. 
-            </Text>
-            <Text style={styles.textstyle}>
-              저는 상담자 OOO입니다.
-            </Text>
-            <Text style={styles.textstyle}>
-              저는 보건복지부 지정을 받은
-            </Text>
-            <Text style={styles.textstyle}>
-              사전연명의료의향서 등록기관인
-            </Text>
-            <Text style={styles.textstyle}>
-              [기관명] 소속 상담사이며,
-            </Text>
-            <Text style={styles.textstyle}>
-              의향서 작성을 돕고 있습니다.
+              사전연명의료의향서 작성은 반드시 법률에 따라 보건복지부의 지정을 받은 등록기관에서만 진행할 수 있고,  
+              상담자는 국민연령의료관리기관의 교육을 이수한 자격을 갖춘 사람임을 알림
             </Text>
           </View>
         </View>
         <View style={styles.liststyle}>
           <View style={{alignSelf:"center"}}>
             {/* {item.icon} */}
-            <AntDesign name="check" size={25} color="blue"/>
+            <AntDesign name="exclamationcircleo" size={25} color="black"/>
           </View>
-          <Text style={{fontSize:20, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
-            상담자 신분증과 등록기관 지정서 제시
-          </Text>
+          <View style={{flexDirection : 'column'}}>
+            <Text style={styles.textstyle}>
+              내담자에게 상담자 신분 증명자료와 등록기관 지정서를 제시함
+            </Text>
+          </View>
+        </View>
+        <View style={styles.liststyle}>
+          <View style={{alignSelf:"center"}}>
+            {/* {item.icon} */}
+            <AntDesign name="exclamationcircleo" size={25} color="black"/>
+          </View>
+          <View style={{flexDirection : 'column'}}>
+            <Text style={styles.textstyle}>
+              관련법률:{"\n"}[호스피스•완화의료 및 임종과정에 있는 환자의 연명의료결정에 관한 법률] 제11조 및 같은 법 시행규칙 제4조
+            </Text>
+          </View>
         </View>
         <View>
           <Button 
@@ -79,8 +69,8 @@ const counselinfo = ({navigation}) => {
             type="outline"
             titleStyle = {{fontSize : 23, fontWeight : 'bold'}}
             buttonStyle = {style=styles.buttonstyle}
-            title = "다음"
-            onPress = {() => navigation.navigate('counselinfo2')}
+            title = "완료"
+            onPress = {() => navigation.navigate('counselhome')}
           />
         </View>
       </View>
@@ -154,4 +144,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default counselinfo;
+export default counselinfo2;

@@ -12,48 +12,43 @@ const counseltype = ({navigation}) => {
   const type = [
     {
       id: '1',
-      title: '일반 상담매뉴얼',
+      title: '표준 상담',
       icon : <Ionicons name="man" size={30} />
     },
     {
       id: '2',
-      title: '시각장애인 상담매뉴얼',
+      title: '시각 맞춤 상담',
       icon : <FontAwesome name="blind" size={30} />
     },
     {
       id: '3',
-      title: '청각장애인 상담매뉴얼',
+      title: '청각 맞춤 상담',
       icon : <FontAwesome5 name="deaf" size={30} />
     },
     {
       id: '4',
-      title: '청력저하 고령자 상담매뉴얼',
-      icon : <MaterialCommunityIcons name="incognito" size={30} />
-    },
-    {
-      id: '5',
-      title: '신체적장애 내담자 상담매뉴얼',
+      title: '신체 맞춤 상담',
       icon : <Fontisto name="paralysis-disability" size={30} />
     },
     {
-      id: '6',
-      title: '인지기능 저하 내담자 상담매뉴얼',
+      id: '5',
+      title: '인지 맞춤 상담',
       icon : <MaterialCommunityIcons name="brain" size={30} />
     },
     {
-      id: '7',
-      title: '외국인 상담매뉴얼',
+      id: '6',
+      title: '외국인 맞춤 상담',
       icon : <Ionicons name="earth" size={30} />
     },
     {
-      id: '8',
-      title: '문맹 상담매뉴얼',
+      id: '7',
+      title: '비문해 맞춤 상담',
       icon : <Ionicons name="language" size={30} />
     }
   ];
 
   return (
-    <View>
+    <View style = {styles.viewstyle}>
       <FlatList 
         keyExtractor = {(item)=> item.id}
         data = {type}
@@ -66,7 +61,7 @@ const counseltype = ({navigation}) => {
               <View style={{alignSelf:"center"}}>
                 {item.icon}
               </View>
-              <Text style={{fontSize:18, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
+              <Text style={{fontSize:20, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
                 {item.title}
               </Text>
               <View style={{alignSelf:"center"}}>
@@ -108,7 +103,30 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     paddingHorizontal : 20,
     flexDirection : 'row'
-  }
+  },
+  btboxview:{
+    flexDirection : 'row',
+    backgroundColor : '#FDF6E3',
+    height : 60,
+    margin : 15,
+    borderRadius : 20,
+    //alignSelf: 'center',
+    justifyContent : 'center',
+    // borderWidth:2,
+    // borderColor: 'black'
+  },
+  viewstyle:{
+    flex:1,
+    justifyContent : 'center'
+  },
+  titlestyle:{
+    fontSize:25,
+    fontWeight:'bold', 
+    color:'black',
+    // borderWidth: 1,
+    // borderColor : 'black',
+    alignSelf : 'center'
+  },
 });
 
 export default counseltype;

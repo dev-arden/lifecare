@@ -19,17 +19,13 @@ const counselid = ({navigation}) => {
       <View style = {styles.viewstyle}>
         <View style = {styles.btboxview}>
             <Text style={styles.titlestyle} >
-              대상자 확인
+              신분증
             </Text>
         </View>
         <View style={styles.newliststyle}>
           <Image 
-            source = {require('../../assets/info_name.png')} 
-            style ={{height : 150, width : 150}}
-          />
-          <Image 
-            source = {require('../../assets/info_hospital.png')} 
-            style ={{height : 150, width : 150}}
+            source = {require('../../assets/id.png')} 
+            style ={{height : 150, width : 350, resizeMode:'contain'}}
           />
         </View>
         <View style={styles.liststyle}>
@@ -39,36 +35,38 @@ const counselid = ({navigation}) => {
           </View>
           <View style={{flexDirection : 'column'}}>
             <Text style={styles.textstyle}>
-              안녕하세요 
+              본인 확인을 위해  
             </Text>
             <Text style={styles.textstyle}>
-              방문해주셔서 감사합니다. 
+              신분증을 보여주시면 
             </Text>
             <Text style={styles.textstyle}>
-              저는 상담자 OOO입니다.
+              감사하겠습니다.
+            </Text>
+            {/* <Text style={styles.textstyle}>
+              사전연명의료의향서는
             </Text>
             <Text style={styles.textstyle}>
-              저는 보건복지부 지정을 받은
+              다른 사람이 대신 작성할 수 없고,
             </Text>
             <Text style={styles.textstyle}>
-              사전연명의료의향서 등록기관인
+              19세 이상의 성인만이 
             </Text>
             <Text style={styles.textstyle}>
-              [기관명] 소속 상담사이며,
-            </Text>
-            <Text style={styles.textstyle}>
-              의향서 작성을 돕고 있습니다.
-            </Text>
+              작성할 수 있습니다.
+            </Text> */}
           </View>
         </View>
         <View style={styles.liststyle}>
           <View style={{alignSelf:"center"}}>
             {/* {item.icon} */}
-            <AntDesign name="check" size={25} color="blue"/>
+            <AntDesign name="exclamationcircleo" size={25} color="black"/>
           </View>
-          <Text style={{fontSize:20, color:'black', paddingHorizontal: 10, flex:1, alignSelf: 'center'}}>
-            상담자 신분증과 등록기관 지정서 제시
-          </Text>
+          <View style={{flexDirection : 'column'}}>
+            <Text style={styles.textstyle}>
+              장애인 등록증은 주민번호 기재여부,{"\n"}여권 및 외국인등록증은 유효기간 확인
+            </Text>
+          </View>
         </View>
         <View>
           <Button 
@@ -83,8 +81,8 @@ const counselid = ({navigation}) => {
             type="outline"
             titleStyle = {{fontSize : 23, fontWeight : 'bold'}}
             buttonStyle = {style=styles.buttonstyle}
-            title = "완료"
-            onPress = {() => navigation.navigate('counselhome')}
+            title = "다음"
+            onPress = {() => navigation.navigate('counselid2')}
           />
         </View>
       </View>
@@ -136,8 +134,8 @@ const styles = StyleSheet.create({
     borderColor : 'white',
     color : 'white',
     backgroundColor : 'white',
-    paddingVertical: 30,
-    paddingHorizontal : 20,
+    paddingVertical: 10,
+    paddingHorizontal : 10,
     flexDirection : 'row',
     justifyContent:'space-around'
   },
