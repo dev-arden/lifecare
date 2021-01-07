@@ -5,6 +5,6 @@
 * OS:안드로이드,ios
 * 서버:구글 firebase,Node.js
 
-~~중간에 업데이트하다가 오류남~~
+~~중간에 업데이트하다가 오류나서 폴더 지워버림..~~
 ### 플젝 새로 팜
 <https://github.com/smulionOong/manual>
