@@ -4,4 +4,6 @@
 * 사용언어:React-Native
 * OS:안드로이드,ios
 * 서버:구글 firebase,Node.js
+## 스크린샷-IOS
 
+## 스크린샷-Android
